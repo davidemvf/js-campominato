@@ -21,23 +21,21 @@ while(i < 16){
 }
 console.log("Numeri generati dal computer:", n_comp);
 
+// inizializzo il contatore dei numeri indovinati
 var vittorie = 0;
 
-for (i = 1; i < 84; i++) {
+// grazie al ciclo chiedo all'utente di immettere i numeri
+while (i < 86 && !n_comp.includes(tent)) {
   var tent = parseInt(prompt("Inserisci un numero da 1 a 100"));
 
   if (n_comp.includes(tent)) {
-    alert("Hai perso, partita finita! Punteggio: ", vittorie);
+    alert("Hai perso, partita finita! Punteggio: " + vittorie);          //se il numero immesso è tra quelli in n_comp la partita finisce, visualizzo il punteggio fatto
   }
   else {
-    alert("Ottimo continua");
+    alert("Ottimo continua");                                            //se il numero non è compreso il n_comp l'utente guadagna un punto e il ciclo si ripete
     vittorie = vittorie + 1;
 
   }
   console.log(vittorie);
+  i++;
 }
-
-
-
-// come fare in modo che il gioco finisca?
-// perchè il contatore "vittorie" non funziona?
